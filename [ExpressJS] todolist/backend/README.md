@@ -1,4 +1,4 @@
 # todolist
 
 : todolist 기능
-<img src="./todolist.jpg">
+<img src="./todolist.JPG">
