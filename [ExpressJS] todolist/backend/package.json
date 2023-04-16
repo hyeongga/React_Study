@@ -2,9 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+=======
+  "main": "index.js",
+  "scripts": {
+>>>>>>> 975bbcf3a521759df562f24af97938822fa2d1bb
     "dev": "nodemon app.js"
   },
   "author": "",

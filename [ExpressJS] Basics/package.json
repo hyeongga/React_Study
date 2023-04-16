@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node app.js",
+=======
+>>>>>>> 975bbcf3a521759df562f24af97938822fa2d1bb
     "dev": "nodemon app.js"
   },
   "repository": {
