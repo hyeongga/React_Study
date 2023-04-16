@@ -1,0 +1,20 @@
+{
+  "name": "express-3",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "test"
+  },
+  "author": "h662",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {},
+  "description": ""
+}
