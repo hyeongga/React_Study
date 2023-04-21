@@ -1,12 +1,13 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import A from "./components/A";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const AppContext = createContext();
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
-    <AppContext.Provider>
+    <AppContext.Provider value={{ count, setCount }}>
       <ChakraProvider>
         <Box>Hello, React</Box>
         <A />
@@ -16,5 +17,3 @@ function App() {
 }
 
 export default App;
-
-//첫 실습 오류남
