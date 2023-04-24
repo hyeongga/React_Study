@@ -8,6 +8,7 @@ const client = new PrismaClient();
 router.post("/", async (req, res) => {
   try {
     const { todo, userId } = req.body;
+
     if (!todo) {
       return res.status(400).json({ ok: false, error: "Not exist todo." });
     }
@@ -42,6 +43,7 @@ router.post("/", async (req, res) => {
 router.get("/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
+    const { skip } = req.query;
     const user = await client.user.findUnique({
       where: {
         id: parseInt(userId),
@@ -56,7 +58,14 @@ router.get("/:userId", async (req, res) => {
       where: {
         userId: parseInt(userId),
       },
+      orderBy: {
+        createdAt: "desc",
+      },
+      skip: parseInt(skip),
+      // skip: 3,
+      take: 3,
     });
+    //findMany의 경우 todolist가 없으면 빈 배열을 던져줌
 
     res.json({ ok: true, todos });
   } catch (error) {
@@ -124,3 +133,8 @@ router.delete("/:id", async (req, res) => {
   }
 });
 module.exports = router;
+
+/* post put delet는 보통 body사용
+get은 주로 params나 query를 사용함
+http://localhost:3010/user/abcd?age=18&height=176
+const { age, height } = req.query; 와 같이 받아올 수 있음*/
